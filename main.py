@@ -42,6 +42,7 @@ def create():
     sql = db.session.execute(text('INSERT INTO student_homework(studentname,hwCompletedPercent) VALUES ("Bob2", "16")'))
     db.session.commit()
     return "Done"
+
 @app.route("/cmd/<command>")
 def command(command):
     yep = f'select {command} from student_homework'
