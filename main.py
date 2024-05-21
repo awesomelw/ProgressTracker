@@ -1,11 +1,8 @@
 from flask import Flask, redirect, render_template
-<<<<<<< Updated upstream
-# from flask_sqlalchemy import SQLAlchemy
-=======
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import text
 import json
->>>>>>> Stashed changes
+
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database2.db'
 db = SQLAlchemy(app)
