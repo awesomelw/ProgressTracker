@@ -26,108 +26,20 @@
             margin-top: 20px;
         }
     </style>
+    <title>Main Page</title>
     <h1>Ms. Jones' Class</h1>
-
+    {% for i in students %}
     <div class="student">
-        <h6>Student 1 <button>Details</button></h6>
+        <h6>{{i['student']}}<button>Details</button></h6>
         <div class="progress">
-            <div class="progressbar" id="progress1" style="width: 50%;">50%</div>
+            <div class="progressbar" id="progress1" style="width: {{i['progress']}}%;">{{i['progress']}}%</div>
         </div>
         <div id="details1" style="display: none;">
             *include details*
         </div>
     </div>
+    {% endfor %}
 
-    <div class="student">
-        <h6>Student 2 <button>Details</button></h6>
-        <div class="progress">
-            <div class="progressbar" id="progress2" style="width: 45%;">45%</div>
-        </div>
-        <div id="details1" style="display: none;">
-            *include details*
-        </div>
-    </div>
-
-    <div class="student">
-        <h6>Student 3 <button>Details</button></h6>
-        <div class="progress">
-            <div class="progressbar" id="progress3" style="width: 10%;">10%</div>
-        </div>
-        <div id="details1" style="display: none;">
-            *include details*
-        </div>
-    </div>
-
-    <div class="student">
-        <h6>Student 4 <button>Details</button></h6>
-        <div class="progress">
-            <div class="progressbar" id="progress4" style="width: 0%;">0%</div>
-        </div>
-        <div id="details1" style="display: none;">
-            *include details*
-        </div>
-    </div>
-
-    <div class="student">
-        <h6>Student 5 <button>Details</button></h6>
-        <div class="progress">
-            <div class="progressbar" id="progress5" style="width: 25%;">25%</div>
-        </div>
-        <div id="details1" style="display: none;">
-            *include details*
-        </div>
-    </div>
-
-
-    <div class="student">
-        <h6>Student 6 <button>Details</button></h6>
-        <div class="progress">
-            <div class="progressbar" id="progress6" style="width: 100%;">100%</div>
-        </div>
-        <div id="details1" style="display: none;">
-            *include details*
-        </div>
-    </div>
-
-    <div class="student">
-        <h6>Student 7 <button>Details</button></h6>
-        <div class="progress">
-            <div class="progressbar" id="progress7" style="width: 90%;">90%</div>
-        </div>
-        <div id="details1" style="display: none;">
-            *include details*
-        </div>
-    </div>
-
-    <div class="student">
-        <h6>Student 8 <button>Details</button></h6>
-        <div class="progress">
-            <div class="progressbar" id="progress8" style="width: 65%;">65%</div>
-        </div>
-        <div id="details1" style="display: none;">
-            *include details*
-        </div>
-    </div>
-
-    <div class="student">
-        <h6>Student 9 <button>Details</button></h6>
-        <div class="progress">
-            <div class="progressbar" id="progress9" style="width: 25%;">25%</div>
-        </div>
-        <div id="details1" style="display: none;">
-            *include details*
-        </div>
-    </div>
-
-    <div class="student">
-        <h6>Student 10 <button>Details</button></h6>
-        <div class="progress">
-            <div class="progressbar" id="progress10" style="width: 40%;">40%</div>
-        </div>
-        <div id="details1" style="display: none;">
-            *include details*
-        </div>
-    </div>
 
     <button>Reset Password</button></h6>
 
