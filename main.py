@@ -47,17 +47,6 @@ def create():
     sql = db.session.execute(text('INSERT INTO student_homework(studentname,hwCompletedPercent) VALUES ("John", 72)'))
     db.session.commit()
     return "Done"
-<<<<<<< Updated upstream
-
-@app.route("/cmd/<command>")
-def command(command):
-    yep = f'select {command} from student_homework'
-    print("="*50)
-    print(yep)
-    sql = db.session.execute(text(yep))
-    return sql
-=======
->>>>>>> Stashed changes
 
 
 if __name__ == "__main__":
