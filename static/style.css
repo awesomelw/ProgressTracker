@@ -11,16 +11,26 @@ body {
     display: flex;
     margin: 0 auto;
     width: 60%;
-    margin-bottom: 0px;
 }
 .progressContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 90%;
     margin: 0 auto;
     height: 30px;
     background-color: #f3f3f3;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     border: 1px solid black;
     border-radius: 1px;
+    position: relative;
+}
+
+.progressBarWrapper {
+    flex-grow: 1;
+    height: 100%;
+    background-color: #f3f3f3;
+    position: relative;
 }
 
 .progressBarAnimated {
@@ -30,9 +40,12 @@ body {
 
 .progressText {
     position: absolute;
-    width: 100%;
+    text-align: left;
+    padding-left: 10px;
+    z-index: 1;
 }
 
-.tasks {
-    margin-bottom: 20px;
+.detailsButton {
+    margin-right: 10px;
+    margin-left: 10px;
 }

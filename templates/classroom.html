@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
-    <!-- Bootstrap CSS -->
-    <title>Main Page</title>
-    <h1>Ms. Jones' Class</h1>
-    {% for i in students %}
-        <h4>{{i['student']}}</h4>
-        <div class="container">
-            <div class="progressContainer"; id="one">
-                <div class="progressBarAnimated" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"; id="one"; style="width: {{i['progress']}}%">{{i['progress']}}%</div>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <title>Main Page</title>
+    </head>
+
+    <body>
+        <h1>Ms. Jones' Class</h1>
+        {% for i in students %}
+            <div class="progressContainer">
+                <div class="progressText">{{ i['student'] }}</div>
+                <div class="progressBarWrapper">
+                    <div class="progressBarAnimated" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: {{ i['progress'] }}%"></div>
+                </div>
+                <a href="{{ url_for('details', student_name=i['student']) }}">
+                    <button class="detailsButton">Details</button>
+                </a>
             </div>
-            <div id="two"><button>Details</button></div>
-        </div>
-    {% endfor %}
-
-
-    <button>Reset Password</button></h6>
+        {% endfor %}
+    </body>
 
 </html>
