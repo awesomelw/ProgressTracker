@@ -10,11 +10,12 @@ class StudentHomework(db.Model):    # Creates table in database called student_h
     id = db.Column(db.Integer, primary_key=True)    # first column of table
     studentname = db.Column(db.String, unique=False, nullable=False)    # second column of table
     hwCompletedPercent = db.Column(db.Integer, nullable=False)    # third column of table
+    badges = db.Column(db.String, nullable=True)    # used later when showing badges
 
     def __repr__(self):
         return self
     
-@app.route("/")    # Web path for classroom.html file (127.0.0.1:5000/)
+@app.route("/teacher")    # Web path for classroom.html file (127.0.0.1:5000/)
 def home():
     students = db.session.execute(text('SELECT studentname, hwCompletedPercent FROM student_homework'))    # queries student_homework table for the student name and their progress
     studentlist = []                                  #  these lines of code iterate over,
@@ -32,7 +33,7 @@ def details(student_name):
         progress = 0
     return render_template("details.html", student_name=student_name, progress=progress)
 
-@app.route("/leaderboard")
+@app.route("/")
 def leaderboard():
     students = db.session.execute(text('SELECT studentname, hwCompletedPercent FROM student_homework ORDER BY hwCompletedPercent DESC'))    # Same as earlier table query but just sorts it
     studentlist = []
@@ -56,4 +57,4 @@ def clear():
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
-        app.run(debug=True)
+        app.run()

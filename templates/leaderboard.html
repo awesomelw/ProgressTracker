@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,12 +9,43 @@
 
 <body>
     <h1>Class Leaderboard</h1>
-    {% for i in students %}
-    <div class="progressContainer">
-        <div class="progressBarAnimated" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: {{ i['progress'] }}%"></div>
-        <div class="progressText">{{ i['student'] }} has completed {{ i['progress'] }}% of the tasks!</div>
+    <div>
+    <a href="/teacher" >
+      <button class="detailsButton">Teacher View</button>
+    </a>
     </div>
+    <br>
+    {% for i in students %}
+    {% set count = loop.index %}
+        <div class="container">
+            {% if count == 1 %}
+            <div id="one">1st place</div>
+            {% elif count == 2 %}
+            <div id="one">2nd Place</div>
+            {% elif count == 3 %}
+            <div id="one">3rd Place</div>
+            {% else %}
+            <div id="one">{{count}}th place</div>
+            {% endif %}
+            <div class="progressContainer" id="two">
+                <div class="progressText">{{ i['student'] }} has completed {{ i['progress'] }} of the tasks!</div>
+                <div class="progressBarWrapper">
+                      <div class="progressBarAnimated" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: {{ i['progress'] }}%"></div>
+                </div>
+            </div>
+            <div id="overlay" onclick="off()"> <div id="text">Your badges</div> </div>
+            <div id="three"> <button class="detailsButton" onclick="on()">Badges</button> </div>
+        </div>
     {% endfor %}
 </body>
+
+<script>
+  function on() {
+    document.getElementById("overlay").style.display = "block";
+  }
+  function off() {
+    document.getElementById("overlay").style.display = "none";
+  }
+</script>
 
 </html>

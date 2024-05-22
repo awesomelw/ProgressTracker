@@ -8,23 +8,34 @@
 </head>
 
 <body>
-    <div class="header">
-        <span><strong>{{ student_name }}</strong></span>
+    <h1>{{student_name}}</h1>
+    <div>
+        <a href="/teacher">
+            <button class="detailsButton">Back</button>
+        </a>
     </div>
     <br>
-
-    <div class="progressContainer">
-        <div class="progressBarAnimated" aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ progress }}%"></div>
-        <div class="progressText">You have completed {{ progress }}% of the tasks!</div>
+    <div class="container">
+        <div class="progressContainer">
+            <div class="progressText">You have completed {{ progress }} of the tasks!</div>
+            <div class="progressBarWrapper">
+                <div class="progressBarAnimated" aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ progress }}%"></div>
+            </div>
+        </div>
     </div>
 
     <div class="tasks">
+        {% if progress!=100 %}
         <p>You still have to complete the following to achieve a 100%:</p>
         <ul>
             <li><input type="checkbox" id="task1"> <label>X</label></li>
             <li><input type="checkbox" id="task2"> <label>Y</label></li>
             <li><input type="checkbox" id="task3"> <label>Z</label></li>
         </ul>
+        
+        {% else %}
+        <p>You completed everything! Great job!</p>
+        {% endif %}
     </div>
 </body>
 
