@@ -41,7 +41,7 @@ def leaderboard():
 
 @app.route("/create")  # navigating to this web page will insert all these values into your database
 def create():
-    sql = db.session.execute(text('UPDATE student_homework(studentname,hwCompletedPercent) VALUES ("Candice", 58), ("Dontrell", 63), ("Eren", 28), ("Faith", 48), ("Gordon", 68), ("Harry", 55), ("Jonathan", 64)'))
+    sql = db.session.execute(text('INSERT INTO student_homework(studentname,hwCompletedPercent) VALUES ("Candice", 58), ("Dontrell", 63), ("Eren", 28), ("Faith", 48), ("Gordon", 68), ("Harry", 55), ("Jonathan", 64)'))
     db.session.commit()
     return "Done"
 
