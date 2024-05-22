@@ -44,7 +44,7 @@ def leaderboard():
 
 @app.route("/create")
 def create():
-    sql = db.session.execute(text('INSERT INTO student_homework(studentname,hwCompletedPercent) VALUES ("John", 72)'))
+    sql = db.session.execute(text('INSERT INTO student_homework(studentname,hwCompletedPercent) VALUES ("Candice", 58), ("Dontrell", 63), ("Eren", 28), ("Faith", 48), ("Gordon", 68), ("Harry", 55), ("Jonathan", 64)'))
     db.session.commit()
     return "Done"
 
@@ -52,4 +52,4 @@ def create():
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
-        app.run()
+        app.run(debug=True)

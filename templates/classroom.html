@@ -1,43 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-    <style>
-        .student {
-            text-align: center;
-            margin-bottom: 10px; 
-        }
-        .progress {
-            width: 50%; 
-            margin: 0 auto; 
-            background-color: white; 
-            border: 1px solid black;
-            border-radius: 4px; 
-        }
-        .progressbar {
-            width: 0; 
-            height: 20px; 
-            background-color: green; 
-            text-align: center; 
-            line-height: 20px; 
-            color: black; 
-            border-radius: 4px; 
-        }
-        h1 {
-            text-align: center; 
-            margin-top: 20px;
-        }
-    </style>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+    <!-- Bootstrap CSS -->
     <title>Main Page</title>
     <h1>Ms. Jones' Class</h1>
     {% for i in students %}
-    <div class="student">
-        <h6>{{i['student']}}<button>Details</button></h6>
-        <div class="progress">
-            <div class="progressbar" id="progress1" style="width: {{i['progress']}}%;">{{i['progress']}}%</div>
+        <h4>{{i['student']}}</h4>
+        <div class="container">
+            <div class="progressContainer"; id="one">
+                <div class="progressBarAnimated" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"; id="one"; style="width: {{i['progress']}}%">{{i['progress']}}%</div>
+            </div>
+            <div id="two"><button>Details</button></div>
         </div>
-        <div id="details1" style="display: none;">
-            *include details*
-        </div>
-    </div>
     {% endfor %}
 
 
