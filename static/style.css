@@ -7,11 +7,13 @@ body {
 .header {
     margin-bottom: 20px;
 }
+
 .container {
     display: flex;
     margin: 0 auto;
     width: 60%;
 }
+
 .progressContainer {
     display: flex;
     align-items: center;
