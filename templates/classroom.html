@@ -11,15 +11,17 @@
     <body>
         <h1>Ms. Jones' Class</h1>
         {% for i in students %}
-            <div class="progressContainer">
+        <div class="container">
+            <div class="progressContainer" id="one">
                 <div class="progressText">{{ i['student'] }}</div>
                 <div class="progressBarWrapper">
                     <div class="progressBarAnimated" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: {{ i['progress'] }}%"></div>
                 </div>
-                <a href="{{ url_for('details', student_name=i['student']) }}">
-                    <button class="detailsButton">Details</button>
-                </a>
             </div>
+            <a href="{{ url_for('details', student_name=i['student']) }}" id="two">
+                <button class="detailsButton">Details</button>
+            </a>
+        </div>
         {% endfor %}
     </body>
 
