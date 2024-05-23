@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
@@ -35,14 +33,42 @@
                       <div class="progressBarAnimated" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: {{ i['progress'] }}%"></div>
                 </div>
             </div>
-            <div id="overlay" onclick="off()"> <div id="text">Your badges</div> </div>
-            <div id="three"> <button class="detailsButton" onclick="on()">Badges</button> </div>
+            <div id="overlay" onclick="off()"> 
+                <div id="text">Your badges</div>
+                <div class="container" style="position:relative">
+                  <div id="first" id="one" style="position:absolute; margin-left:0%" hidden><img src="https://as1.ftcdn.net/v2/jpg/01/01/50/80/1000_F_101508095_CM0voXNBYcPNeQkYmqVGLrf0Xf26xYZ0.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                    width="200px" alt="profile"></div>
+                  <div id="second" id="two" style="position:absolute; margin-left:40%"><img src="https://as2.ftcdn.net/v2/jpg/01/01/50/81/1000_F_101508160_lPavPe7mbxIh2O4qnis7kzkCatXZm0gO.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                    width="200px" alt="profile"></div>
+                  <div id="third" id="three" style="position:absolute; margin-left: 80%;"><img src="https://as2.ftcdn.net/v2/jpg/01/01/50/83/1000_F_101508338_CqaBMhLtwaGQ6teFi7Vxv9dip7a8vhey.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                    width="200px" alt="profile"></div>
+                </div>
+            </div>
+            <div id="three"> <button class="detailsButton" name="{{ i['progress'] }}" onclick="on(name)">Badges</button> </div>
         </div>
     {% endfor %}
 </body>
 
 <script>
-  function on() {
+  function on(prog) {
+    if (prog >= 25) {
+      document.getElementById("first").style.display = "block";
+    }
+    else {
+      document.getElementById("first").style.display = "none";
+    }
+    if (prog >= 50) {
+      document.getElementById("second").style.display = "block";
+    }
+    else {
+      document.getElementById("second").style.display = "none";
+    }
+    if (prog == 100) {
+      document.getElementById("third").style.display = "block";
+    }
+    else {
+      document.getElementById("third").style.display = "none";
+    }
     document.getElementById("overlay").style.display = "block";
   }
   function off() {
