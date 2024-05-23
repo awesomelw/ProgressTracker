@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Student Details</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
@@ -17,7 +18,7 @@
     <br>
     <div class="container">
         <div class="progressContainer">
-            <div class="progressText">You have completed {{ progress }} of the tasks!</div>
+            <div class="progressText">You have completed {{ progress }}% of the tasks!</div>
             <div class="progressBarWrapper">
                 <div class="progressBarAnimated" aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ progress }}%"></div>
             </div>

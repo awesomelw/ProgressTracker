@@ -2,6 +2,7 @@
 <html lang="en">
   
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
@@ -29,7 +30,7 @@
             <div id="one">{{count}}th place</div>
             {% endif %}
             <div class="progressContainer" id="two">
-                <div class="progressText">{{ i['student'] }} has completed {{ i['progress'] }} of the tasks!</div>
+                <div class="progressText">{{ i['student'] }} has completed {{ i['progress'] }}% of the tasks!</div>
                 <div class="progressBarWrapper">
                       <div class="progressBarAnimated" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: {{ i['progress'] }}%"></div>
                 </div>
